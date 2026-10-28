@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>АРХИВ // СЕКРЕТНО</title>
+<style>
+:root{--bg:#080d12;--panel:#0d151c;--panel2:#111d26;--line:#263945;--green:#a8e6c1;--muted:#78909c;--red:#d56b6b;--gold:#c5b57a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#14232d 0%,var(--bg) 60%);color:#d8e4e9;font:14px/1.55 Consolas,"Courier New",monospace;min-height:100vh}
+button{font:inherit;cursor:pointer} .top{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line);background:#080d12e8;position:sticky;top:0;z-index:5}
+.brand{letter-spacing:3px;color:var(--green);font-weight:bold}.status{color:var(--muted);font-size:12px}.layout{display:grid;grid-template-columns:250px 1fr;min-height:calc(100vh - 60px)}
+aside{border-right:1px solid var(--line);padding:20px 12px;background:#091017}.navhead{font-size:11px;color:var(--muted);letter-spacing:2px;padding:8px}
+.nav{display:block;width:100%;text-align:left;color:#b9cbd2;background:transparent;border:1px solid transparent;padding:12px;margin:3px 0;border-radius:3px}.nav:hover,.nav.active{border-color:#35505b;background:#14232b;color:var(--green)}.nav.locked{color:#7e7777}.sidefoot{margin:25px 8px;color:#607580;font-size:11px}
+main{padding:28px;max-width:1100px;width:100%;margin:0 auto}.eyebrow{font-size:11px;color:var(--green);letter-spacing:2px}.title{font-size:clamp(24px,4vw,38px);letter-spacing:2px;margin:8px 0}.sub{color:var(--muted);max-width:700px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px}.card{border:1px solid var(--line);background:linear-gradient(145deg,var(--panel2),var(--panel));padding:18px;border-radius:4px}.card h3{margin:0 0 8px;color:var(--green);font-size:15px}.card p{color:#a9bbc3}.tag{display:inline-block;border:1px solid #45545c;padding:3px 7px;font-size:10px;color:var(--gold);letter-spacing:1px;margin:4px 4px 0 0}.primary{background:#19352e;border:1px solid #477764;color:var(--green);padding:10px 14px;margin-top:10px}.primary:hover{background:#24493e}.danger{color:#e7a0a0;border-color:#704646;background:#301b20}.profile{display:flex;gap:18px;align-items:center;border:1px solid var(--line);padding:18px;background:#0c151c}.avatar{width:66px;height:66px;display:grid;place-items:center;border:1px solid #55726d;color:var(--green);font-size:25px;background:#14231f}.meta{font-size:12px;color:var(--muted)}.file{padding:16px;border:1px solid var(--line);background:#0b1319;margin:12px 0}.file h3{margin:0;color:#dbe7ea}.file p{white-space:pre-wrap;color:#d0dce1;font-size:14px;line-height:1.8}.redacted{color:#ef9999;border:1px dashed #744343;padding:12px;text-align:center;letter-spacing:2px;font-weight:bold}.lockedpanel{margin-top:20px;padding:24px;border:1px solid #634747;background:linear-gradient(135deg,#201619,#0d1319);text-align:center}.lockicon{font-size:34px;color:#d18b8b}.hidden{display:none!important} #auth.hidden,#loader.hidden{display:none!important}
+#loader{position:fixed;inset:0;width:100vw;height:100vh;min-height:100dvh;background:#05090df7;z-index:9999;display:grid;place-items:center;padding:20px}.loadbox{width:min(680px,100%);border:1px solid #426054;background:#0d171c;padding:clamp(22px,4vw,40px);box-shadow:0 0 80px #172c26}.loadtitle{color:var(--green);letter-spacing:2px}.blocks{display:grid;grid-template-columns:repeat(30,1fr);gap:3px;margin:18px 0}.blocks span{height:12px;background:#20302f;border:1px solid #2d4540}.blocks span.on{background:#8ed9ae;box-shadow:0 0 8px #5cb984}.loadrow{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.bar{height:4px;background:#1b2a2f;margin-top:12px}.barin{height:100%;width:0;background:var(--green);transition:width .1s linear}
+footer{border-top:1px solid var(--line);padding:15px 22px;color:#526670;font-size:11px}
+@media(max-width:700px){.layout{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid var(--line);padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:4px}.navhead,.sidefoot{grid-column:1/-1}.nav{padding:9px;font-size:12px}main{padding:20px 14px}.top{padding:12px 14px}.status{text-align:right}}
+</style>
+</head>
+<body>
+<header class="top"><div class="brand">◈ АРХИВ / URNC</div><div class="status">ТЕРМИНАЛ: <span style="color:var(--green)">ЗАЩИЩЁН</span> · СЕАНС ЛОКАЛЬНЫЙ</div></header>
+<div class="layout">
+<aside>
+ <div class="navhead">НАВИГАЦИЯ / ДОПУСК</div>
+ <button class="nav active" data-page="home">▣ Главная / профиль</button>
+ <button class="nav" data-page="shared">▤ Общая папка: GR-03</button>
+ <button class="nav" data-page="kazakh">▣ Секретно Казах</button>
+ <button class="nav" data-page="devyat">▣ Секретно Девятый</button>
+ <button class="nav" data-page="pancir">▣ Секретно Панцирь</button>
+ <button class="nav locked" data-page="sealed">▣ [ЗАШИФРОВАНО] Следующая часть</button>
+ <div class="sidefoot">УРОВЕНЬ ДОСТУПА: ОГРАНИЧЕН<br>РЕЖИМ: ЧТЕНИЕ<br>АРХИВНЫЙ КОД: URNC / GR-03 / 2061</div>
+</aside>
+<main id="main"></main>
+</div>
+<footer>ВНУТРЕННИЙ АРХИВ URNC · НЕРАЗРЕШЁННОЕ КОПИРОВАНИЕ ЗАПРЕЩЕНО · ВЫМЫШЛЕННЫЙ ИНТЕРАКТИВНЫЙ ПРОТОТИП</footer>
+
+<div id="auth" class="hidden" aria-live="polite" style="position:fixed;inset:0;width:100vw;height:100vh;min-height:100dvh;background:#05090df8;z-index:10000;display:grid;place-items:center;padding:20px">
+ <div class="loadbox" style="border-color:#704646;box-shadow:0 0 80px #301b20">
+  <div class="loadtitle" style="color:#e7a0a0">◈ URNC // ПРОВЕРКА ДОПУСКА</div>
+  <h2 id="authTitle" style="font-size:clamp(20px,3vw,28px);margin:14px 0 4px">СЕКРЕТНЫЙ РАЗДЕЛ</h2>
+  <p class="sub">Материал классифицирован. Для доступа введите ключ допуска.</p>
+  <label for="authPass">КЛЮЧ ДОСТУПА</label><br>
+  <input id="authPass" type="password" autocomplete="off" placeholder="Введите пароль..." style="margin:12px 0;background:#070c10;color:#d8e4e9;border:1px solid #634747;padding:12px;width:min(400px,100%)">
+  <br><button id="authSubmit" class="primary danger">ПОДТВЕРДИТЬ ДОПУСК</button>
+  <button id="authCancel" class="primary" style="margin-left:8px">ОТМЕНА</button>
+  <p id="authMsg" class="meta">Уровень доступа: секретно</p>
+ </div>
+</div>
+
+<div id="loader" class="hidden" aria-live="polite"><div class="loadbox"><div class="loadtitle">◈ УСТАНОВЛЕНИЕ ЗАЩИЩЁННОГО СОЕДИНЕНИЯ</div><h2 style="font-size:clamp(20px,3vw,28px);margin:14px 0 4px">ЗАГРУЗКА АРХИВНЫХ ДАННЫХ</h2><p id="loadmsg">Проверка целостности файлов...</p><div class="blocks" id="blocks"></div><div class="loadrow"><span id="loadstate">СВЕРКА КЛЮЧА</span><span id="percent">00%</span></div><div class="bar"><div class="barin" id="barin"></div></div><p class="meta">Не закрывайте терминал до завершения проверки.</p></div></div>
+<script>
+const main=document.getElementById('main');
+const loader=document.getElementById('loader');
+const blocks=document.getElementById('blocks');
+for(let i=0;i<30;i++)blocks.appendChild(document.createElement('span'));
+let current='home', busy=false;
+const pages={
+home:`<div class="eyebrow">СИСТЕМА УЧЁТА / ДОСЬЕ ОПЕРАТОРА</div><h1 class="title">АРХИВНЫЙ ТЕРМИНАЛ</h1><p class="sub">Внутренняя база материалов. Некоторые записи повреждены, отдельные разделы закрыты по уровню допуска.</p>
+<div class="profile"><div class="avatar">URNC</div><div><div class="eyebrow">ПРОФИЛЬ СЕАНСА</div><h2 style="margin:4px 0">Оператор архивного доступа</h2><div class="meta">Статус: авторизован локально · Права: просмотр доступных материалов</div></div></div>
+<div class="grid"><div class="card"><h3>▤ GR-03 — Общая папка</h3><p>Сводные материалы о Девятом, Панцире и Казахе. Задание «Гранит» и записи Информатора.</p><span class="tag">ДОСТУПНО</span><br><button class="primary" onclick="go('shared')">Открыть папку →</button></div>
+<div class="card"><h3>▣ Персональные досье</h3><p>Три отдельных профиля. Индивидуальные материалы не раскрыты в общей папке.</p><span class="tag">ОГРАНИЧЕННЫЙ ДОСТУП</span><br><button class="primary" onclick="go('kazakh')">Перейти к досье →</button></div>
+<div class="card"><h3>▣ Зашифрованный сектор</h3><p>Следующая часть архива закрыта. Для ролевого сюжета можно настроить собственный пароль в коде.</p><span class="tag">ЗАМОК АКТИВЕН</span><br><button class="primary danger" onclick="go('sealed')">Проверить доступ →</button></div></div>`,
+shared:`<div class="eyebrow">КАТАЛОГ / GR-03</div><h1 class="title">ОБЩАЯ ПАПКА</h1><p class="sub">Связанные записи. Источники: досье, документы об операциях и личные заметки.</p>
+<div class="file"><span class="tag">ОПЕРАЦИЯ / ГРАНИТ / ОСНОВНОЙ ОТЧЁТ</span><h3>Данные о Девятом, Панцире и Казахе</h3><p>В архиве обнаружена примечательная строчка среди досье, документов об операциях и сводок: Панцирь ранее служил вместе с Казахом. Совпадение их позывных встречается в нескольких независимых фрагментах, однако часть хронологии удалена.
+
+Задание «Гранит»: задача — ликвидировать лидера террористической организации «Шакалы» Аль Ахада. Местность — Литвия, небольшой город Лафин. Первичная группа действовала успешно, пока Аль Ахад не добрался до вертолёта и не попытался покинуть район. Только Панцирю и Казаху удалось прорваться к площадке и устранить цель. После этого в журнале остаётся незавершённая строка: «только…».</p><div class="redacted"># ДАЛЬНЕЙШАЯ ЗАПИСЬ СТЁРТА</div></div>
+<div class="file"><span class="tag">ОПЕРАЦИЯ / ГРАНИТ </span><h3></h3>
+
+
+
+</p><div class="redacted">ВИДЕОПОТОК ПОВРЕЖДЁН · КАДРЫ 00:14:08–00:19:42 ОТСУТСТВУЮТ</div></div>
+
+Задание «Гранит»: задача — убить лидера террористической организации «Шакалы». Местность — Литвия, небольшой город под названием Лафин. Команда выполняла задачу успешно, пока «Лидер Шакалов — Аль Ахад» не забрался в вертолёт и чуть не улетел. Только Панцирю и Казаху удалось добраться до вертолёта и устранить его. Только…
+
+</p><div class="redacted"># ДАЛЬНЕЙШАЯ ЗАПИСЬ СТЁРТА</div></div>
+<div class="file"><span class="tag">ПРИПЯТЬ / ЛИЧНЫЙ ДНЕВНИК</span><h3>Данные в Припяти</h3><p>Записи и личный дневник Информатора, которые были найдены, кратко говорили о его выживании в Припяти и отправке сигнала СОС Казаху, чтобы получить безопасность: он почувствовал, что за ним идут.
+
+Пока он был информатором в структуре Панцирей и собирал информацию, в начале всё было хорошо. Потом дальнейшие записи становились странными, зачёркнутыми и непонятными. Затем появилась запись:
+
+«А может, действительно Панцирь прав?»
+
+Следующая запись — спустя несколько месяцев:
+
+«Я вырвался. Я не помню, что творил, но мне нужно сбежать. Уеду в Припять и там буду вызывать помощь».</p><div class="redacted">ПЕРЕД ОТПРАВКОЙ СИГНАЛА СОС ОБНАРУЖЕНА ЗАПИСЬ</div><p style="color:var(--gold);font-style:italic">«Вчерашние стены однажды становятся дверями, а открытые двери — тупиками. Не спеши доверять направлению ветра: порой он меняет курс не потому, что переменился сам, а потому, что кто-то незаметно повернул весь компас».</p></div>
+<div class="file"><span class="tag">ИНФОРМАТОР / СВОДКА СИЛ</span><h3>Структура Панцирей — предварительная оценка</h3><p>Фрагмент из записей Информатора, собранных до его исчезновения:
+
+«По неполным наблюдениям, численность сил Панцирей превышает 5 000 единиц личного состава пехоты. В распоряжении структуры замечены корабли, наземная техника, транспортные колонны, тяжёлые платформы и боевые вертолёты. Перемещение подразделений выглядит организованным; отдельные группы действуют без обычного радиообмена.
+
+Куклы в обнаруженных подразделениях не зафиксированы. Вместо них отмечены роботизированные пехотные единицы. Их маркировка частично закрыта, а происхождение не установлено. Не исключено, что роботы подчиняются единому командному контуру, но подтверждения этому нет».
+
+Оценка численности предварительная и может включать повторно зарегистрированные подразделения. Источник не указывает, кто именно утвердил итоговую цифру.</p><div class="redacted">ПРИЛОЖЕНИЕ: СПИСОК ТЕХНИКИ И МАРШРУТЫ КОЛОНН УДАЛЕНЫ</div></div>
+<div class="file"><span class="tag">ОБЪЕКТ / PL-41 / ЭЛЬМО</span><h3>Последняя отметка о PL-41</h3><p>В одном из обрывков Информатора PL-41 отмечен как находящийся рядом с Эльмо. Точные координаты, назначение объекта и сведения о сопровождающих подразделениях отсутствуют. При попытке открыть каталог объекта система возвращает одинаковый результат: «запись не найдена».
+
+В соседнем журнале обнаружена отметка о массовом стирании данных. Удалены журналы доступа, наблюдения, перемещения техники и список персонала. Неизвестно, было ли это сделано для сокрытия операции, предотвращения утечки или после аварии. Восстановить исходные записи из доступного архива не удалось.</p><div class="redacted">PL-41 // ВСЕ ЗАПИСИ СТЁРТЫ // ВОССТАНОВЛЕНИЕ НЕВОЗМОЖНО</div></div>
+<div class="grid"><div class="card"><h3>Связанный файл: Казах</h3><p>Упоминается в отчёте «Гранит» и в сигнале СОС.</p><button class="primary" onclick="go('kazakh')">Открыть досье</button></div><div class="card"><h3>Связанный файл: Девятый</h3><p>Упомянут в заголовке архивной подборки. Дополнительная информация закрыта.</p><button class="primary" onclick="go('devyat')">Открыть досье</button></div><div class="card"><h3>Связанный файл: Панцирь</h3><p>Участник задания «Гранит», позднее фигурирует в дневнике Информатора.</p><button class="primary" onclick="go('pancir')">Открыть досье</button></div></div>`,
+kazakh:`<div class="eyebrow">ПЕРСОНАЛЬНОЕ ДОСЬЕ / K-01</div><h1 class="title">СЕКРЕТНО: КАЗАХ</h1><span class="tag">УРОВЕНЬ: СЕКРЕТНО</span><div class="file"><h3>Подтверждённые упоминания</h3><p>— Участвовал в задании «Гранит» вместе с Панцирем.
+— По архивной записи, они добрались до вертолёта, на котором пытался скрыться Аль Ахад, и устранили цель.
+— Информатор отправил Казаху сигнал СОС, рассчитывая получить защиту.
+— После разрушения дамбы группа оказалась разделена; фрагмент радиоперехвата связывает Казаха с эвакуацией раненых через сервисный тоннель.
+— В сообщении Информатора Казах обозначен как единственный контакт, которому отправитель ещё готов доверять.</p></div><div class="file"><h3>Примечание аналитика</h3><p>Причина, по которой Информатор выбрал именно Казаха, не установлена. Дальнейшая запись об операции «Гранит» стёрта. Нет подтверждения, получил ли Казах сигнал полностью и успел ли ответить.</p></div><div class="redacted">ОСТАЛЬНЫЕ МАТЕРИАЛЫ: ДОСТУП ОГРАНИЧЕН</div>`,
+devyat:`<div class="eyebrow">ПЕРСОНАЛЬНОЕ ДОСЬЕ / D-09</div><h1 class="title">СЕКРЕТНО: ДЕВЯТЫЙ</h1><span class="tag">УРОВЕНЬ: СЕКРЕТНО</span><div class="file"><h3>Архивная отметка</h3><p>Имя Девятого указано в заголовке подборки материалов вместе с Панцирем и Казахом. В предоставленных записях отсутствует подтверждённое описание его роли в задании «Гранит» или событиях в Припяти. В реконструкции инцидента на дамбе его позывной появляется в радиоперехвате после потери связи с командованием.</p></div><div class="file"><h3>Необработанные сведения</h3><p>Последний фрагмент передачи содержит голос, похожий на голос Девятого, однако качество записи не позволяет подтвердить личность. В нём повторяется фраза: «Координаты уже изменили. Если вы видите мой маркер — не идите за ним». Возможная связь с остальными фигурантами требует проверки. Нельзя установить, является ли отсутствие данных результатом удаления, сокрытия или неполноты архива.</p></div><div class="redacted">ДОПОЛНИТЕЛЬНЫЕ ЗАПИСИ НЕ НАЙДЕНЫ</div>`,
+pancir:`<div class="eyebrow">ПЕРСОНАЛЬНОЕ ДОСЬЕ / P-02</div><h1 class="title">СЕКРЕТНО: ПАНЦИРЬ</h1><span class="tag">УРОВЕНЬ: СЕКРЕТНО</span><div class="file"><h3>Подтверждённые упоминания</h3><p>— Служил вместе с Казахом.
+— Участвовал в задании «Гранит» против лидера организации «Шакалы» — Аль Ахада.
+— В реконструкции после разрушения дамбы удерживал подход к эвакуационной площадке, пока группа выводила раненых.
+— Позднее Информатор собирал сведения внутри структуры Панцирей.
+— По оценке Информатора, численность пехоты Панцирей превышает 5 000 единиц; также упоминаются корабли, наземная техника и боевые вертолёты.
+— В дневнике Информатора появилась запись: «А может, действительно Панцирь прав?»</p></div><div class="file"><h3>Аналитическая пометка</h3><p>Контекст фразы неизвестен. В тех же записях говорится, что куклы не обнаружены, но присутствуют роботизированные пехотные единицы. Данные о составе сил предварительные. Нет доказательств, что Панцирь лично отдавал приказы по объекту PL-41 рядом с Эльмо; все записи по объекту стёрты.</p></div><div class="redacted">ДАЛЬНЕЙШАЯ ЗАПИСЬ ОБ ОПЕРАЦИИ СТЁРТА</div>`,
+sealed:`<div class="eyebrow">ЗАКРЫТЫЙ СЕКТОР / ENCRYPTED</div><h1 class="title">СЛЕДУЮЩАЯ ЧАСТЬ</h1><div class="lockedpanel"><div class="lockicon">▣</div><h2>ДОСТУП ЗАКРЫТ</h2><p class="sub" style="margin:0 auto 16px">Файл зашифрован. Требуется ключ допуска URNC.</p><label for="pass">КЛЮЧ РАЗБЛОКИРОВКИ</label><br><input id="pass" type="password" placeholder="Введите ключ..." style="margin:12px 0;background:#070c10;color:#d8e4e9;border:1px solid #634747;padding:11px;width:min(360px,100%)"><br><button class="primary danger" onclick="unlock()">РАЗБЛОКИРОВАТЬ</button><p id="passmsg" class="meta">Статус: зашифровано · URNC</p></div>`
+};
+function render(page){current=page;main.innerHTML=pages[page]||pages.home;document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b.dataset.page===page));}
+let pendingPage=null;
+const protectedPages={kazakh:'СЕКРЕТНО: КАЗАХ',devyat:'СЕКРЕТНО: ДЕВЯТЫЙ',pancir:'СЕКРЕТНО: ПАНЦИРЬ',sealed:'СЕКРЕТНАЯ ЧАСТЬ'};
+function go(page){if(busy)return;if(protectedPages[page]){pendingPage=page;document.getElementById('authTitle').textContent=protectedPages[page];document.getElementById('authPass').value='';document.getElementById('authMsg').textContent='Уровень доступа: секретно';document.getElementById('auth').classList.remove('hidden');document.getElementById('authPass').focus();return;}loadPage(page);}
+function loadPage(page){if(busy)return;busy=true;loader.classList.remove('hidden');document.getElementById('loadmsg').textContent='Проверка целостности: '+({home:'профиля',shared:'общей папки GR-03',kazakh:'досье K-01',devyat:'досье D-09',pancir:'досье P-02',sealed:'зашифрованного сектора'}[page]||'файла');let t=0;const cells=[...blocks.children];cells.forEach(c=>c.classList.remove('on'));document.getElementById('percent').textContent='00%';document.getElementById('barin').style.width='0%';const timer=setInterval(()=>{t++;const n=Math.floor(t/10*cells.length);cells.forEach((c,i)=>c.classList.toggle('on',i<n));document.getElementById('percent').textContent=String(t*10).padStart(2,'0')+'%';document.getElementById('barin').style.width=(t*10)+'%';document.getElementById('loadstate').textContent=t<4?'СВЕРКА КЛЮЧА':t<8?'ПРОВЕРКА ЦЕЛОСТНОСТИ':'ЗАГРУЗКА ЗАПИСЕЙ';if(t>=10){clearInterval(timer);render(page);loader.classList.add('hidden');busy=false;}},1000);}
+function submitAuth(){const field=document.getElementById('authPass');const msg=document.getElementById('authMsg');if(field.value==='GRANIT-2121'){const target=pendingPage;document.getElementById('auth').classList.add('hidden');pendingPage=null;loadPage(target);}else{msg.style.color='var(--red)';msg.textContent='ОТКАЗ: неверный ключ. Доступ закрыт.';field.value='';field.focus();}}
+document.getElementById('authSubmit').addEventListener('click',submitAuth);
+document.getElementById('authCancel').addEventListener('click',()=>{document.getElementById('auth').classList.add('hidden');pendingPage=null;});
+document.getElementById('authPass').addEventListener('keydown',e=>{if(e.key==='Enter')submitAuth();});
+function unlock(){const field=document.getElementById('pass');const msg=document.getElementById('passmsg');if(field.value==='GRANIT-2121'){msg.style.color='var(--green)';msg.textContent='Ключ принят. Сектор открыт.';setTimeout(()=>{pages.sealed=`<div class="eyebrow">ЗАКРЫТЫЙ СЕКТОР / DECRYPTED</div><h1 class="title">ФАЙЛ РАСШИФРОВАН</h1><div class="file"><h3>Фрагмент: сигнал СОС</h3><p>Сигнал принят. Источник — Припять. Отправитель: Информатор. Получатель: Казах. Привязка к объекту PL-41 не подтверждена: все записи об объекте стёрты.</p><p>«Если ты читаешь это, значит, я не смог объяснить всё лично. Сводка о Панцирях неполная: более пяти тысяч пехоты, корабли, техника и боевые вертолёты. Кукол я не видел — только роботизированную пехоту. PL-41 находится рядом с Эльмо, но весь журнал стёрт. Не верь первому отчёту. Сверь даты, найди пропущенную запись и спроси себя: кто получил выгоду от того, что я исчез?»</p></div><div class="redacted">КОНЕЦ ДОСТУПНОГО ФРАГМЕНТА</div>`;render('sealed');},700);}else{msg.style.color='var(--red)';msg.textContent='ОТКАЗ: неверный ключ. Доступ остаётся закрытым.';field.value='';}}
+document.querySelectorAll('.nav').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+render('home');
+</script>
+</body>
+</html>
